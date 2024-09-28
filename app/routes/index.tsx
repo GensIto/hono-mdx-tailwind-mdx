@@ -1,18 +1,12 @@
-import { css } from 'hono/css'
-import { createRoute } from 'honox/factory'
-import Counter from '../islands/counter'
-
-const className = css`
-  font-family: sans-serif;
-`
+import { createRoute } from "honox/factory";
+import Counter from "../islands/counter";
 
 export default createRoute((c) => {
-  const name = c.req.query('name') ?? 'Hono'
   return c.render(
-    <div class={className}>
-      <h1>Hello, {name}!</h1>
+    <div>
+      <h1 className='text-xl text-red-400'>Hello!</h1>
+      <h2>HI!</h2>
       <Counter />
-    </div>,
-    { title: name }
-  )
-})
+    </div>
+  );
+});
